@@ -1,0 +1,72 @@
+.bg-beige {
+  background-color: #f5f5f0;
+}
+
+.bg-brown {
+  background-color: #8a5132;
+}
+
+.text-brown {
+  color: #8a5132;
+}
+
+.border-brown {
+  border-color: #8a5132;
+}
+
+.focus\:border-brown:focus {
+  border-color: #8a5132;
+}
+
+.focus\:ring-brown:focus {
+  box-shadow: 0 0 0 2px rgba(138, 81, 50, 0.5);
+}
+
+.hover\:bg-darkbrown:hover {
+  background-color: #663b21;
+}
+
+.automation-card {
+  border: 1px solid #000000;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.automation-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+input, select {
+  padding: 0.5rem;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+input:focus, select:focus {
+  border-color: #8a5132;
+  box-shadow: 0 0 0 2px rgba(138, 81, 50, 0.5);
+}
+/* src/app/components/automations/automations.component.css */
+.bg-beige {
+  background-color: #f5f5f0;
+}
+
+.border-brown {
+  border-color: #8a5132;
+}
+
+.bg-brown {
+  background-color: #8a5132;
+}
+
+.hover\:bg-darkbrown:hover {
+  background-color: #603815;
+}
+
+.text-brown {
+  color: #8a5132;
+}

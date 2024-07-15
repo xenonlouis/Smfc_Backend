@@ -1,0 +1,59 @@
+<!-- create-automation-dialog.component.html -->
+<div class="container mx-auto bg-white p-6 rounded-lg shadow-md">
+  <h2 class="text-2xl font-bold mb-4">Create Automation</h2>
+  <form #automationForm="ngForm" (ngSubmit)="onSubmit(automationForm)">
+    <div class="mb-4">
+      <label class="block text-gray-700">Name</label>
+      <input
+        type="text"
+        [(ngModel)]="automationItem.name"
+        name="name"
+        required
+        class="w-full px-3 py-2 border rounded-md"
+      />
+    </div>
+    <div class="mb-4">
+      <label class="block text-gray-700">Description</label>
+      <input
+        type="text"
+        [(ngModel)]="automationItem.description"
+        name="description"
+        required
+        class="w-full px-3 py-2 border rounded-md"
+      />
+    </div>
+    <div class="mb-4">
+      <label class="block text-gray-700">Start Date</label>
+      <input
+        type="datetime-local"
+        [(ngModel)]="automationItem.schedule.startDate"
+        name="startDate"
+        required
+        class="w-full px-3 py-2 border rounded-md"
+      />
+    </div>
+    <div class="mb-4">
+      <label class="block text-gray-700">End Date</label>
+      <input
+        type="datetime-local"
+        [(ngModel)]="automationItem.schedule.endDate"
+        name="endDate"
+        required
+        class="w-full px-3 py-2 border rounded-md"
+      />
+    </div>
+    <div class="mb-4">
+      <label class="block text-gray-700">Run Frequency</label>
+      <input
+        type="text"
+        [(ngModel)]="automationItem.schedule.runFrequency"
+        name="runFrequency"
+        required
+        class="w-full px-3 py-2 border rounded-md"
+      />
+    </div>
+    <div class="flex justify-end">
+      <button type="submit" class="px-4 py-2 bg-blue-500 text-white rounded-md">Create</button>
+    </div>
+  </form>
+</div>

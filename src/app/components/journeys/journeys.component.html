@@ -1,0 +1,65 @@
+<html>
+<body>
+<div class="bg-beige min-h-screen px-4 py-8">
+  <div class="container mx-auto">
+    <h1 class="text-3xl font-bold mb-8">Journey</h1>
+
+    <div class="flex gap-4 mb-4">
+      <div class="flex items-center gap-2">
+        <label class="block font-medium mb-2">Quick Find:</label>
+        <input
+          type="text"
+          placeholder="Search by name..."
+          [(ngModel)]="searchTerm"
+          (ngModelChange)="filterJourneys()"
+          class="border border-gray-300 p-2 rounded-md bg-white shadow-sm focus:outline-none focus:border-brown focus:ring-2 focus:ring-brown focus:ring-opacity-50 transition"
+        />
+      </div>
+
+      <div class="flex items-center gap-2">
+        <label for="category" class="block font-medium mb-2">Toutes les catégories:</label>
+        <select
+          id="category"
+          class="w-full border border-gray-700 p-2 rounded-md bg-white shadow-sm focus:outline-none focus:border-brown focus:ring-2 focus:ring-brown focus:ring-opacity-50 transition"
+          [(ngModel)]="selectedCategory"
+          (ngModelChange)="filterJourneys()"
+        >
+          <option value="all">Toutes les catégories</option>
+          <option value="Draft">Draft</option>
+          <option value="Published">Published</option>
+          <option value="Sent">Sent</option>
+        </select>
+      </div>
+
+      <div class="flex items-center gap-2">
+        <label for="sort" class="block font-medium mb-2">Sort by:</label>
+        <select
+          id="sort"
+          class="w-full border border-gray-700 p-2 rounded-md bg-white shadow-sm focus:outline-none focus:border-brown focus:ring-2 focus:ring-brown focus:ring-opacity-50 transition"
+          [(ngModel)]="sortOrder"
+          (ngModelChange)="sortJourneys()"
+        >
+          <option value="name">Name</option>
+          <option value="modifiedDate">Last Modified</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div
+        class="automation-card bg-white rounded-lg shadow-md flex border border-gray-300 p-6"
+        *ngFor="let journey of filteredJourneys; let i = index"
+        (click)="openDetails(journey)"
+      >
+        <div class="w-full">
+          <h2 class="text-xl font-semibold mb-4 automation-name">{{ journey.name }}</h2>
+          <p class="text-gray-700">Status: {{ journey.status }}</p>
+          <p class="text-gray-700">Last Modified: {{ journey.modifiedDate | date: 'short' }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

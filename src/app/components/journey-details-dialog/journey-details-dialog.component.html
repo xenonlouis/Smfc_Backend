@@ -1,0 +1,21 @@
+<div class="bg-beige min-h-screen px-4 py-8">
+  <div class="container mx-auto">
+    <div class="bg-white rounded-lg shadow-md p-6 border border-gray-300">
+      <h2 class="text-2xl font-semibold mb-4">{{ data.name }}</h2>
+      <p class="text-gray-700 mb-2"><strong>Status:</strong> {{ data.status }}</p>
+      <p class="text-gray-700 mb-2"><strong>Created at :</strong>{{ data.createdDate | date: 'short' }}</p>
+      <p class="text-gray-700 mb-2"><strong>Modified Date:</strong> {{ data.modifiedDate | date: 'short' }}</p>
+      <div *ngIf="data.activities?.length">
+        <h3 class="font-semibold mt-4">Steps:</h3>
+        <ul>
+          <li *ngFor="let activity of data.activities">
+            <p>{{ activity.name }} ({{ activity.type }})</p>
+          </li>
+        </ul>
+      </div>
+      <div class="flex justify-end mt-4">
+        <button  mat-dialog-close class="px-3 py-1 bg-brown text-black font-semibold rounded-md hover:bg-brown ">Close</button>
+      </div>
+    </div>
+  </div>
+</div>

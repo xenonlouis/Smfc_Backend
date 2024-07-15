@@ -1,0 +1,30 @@
+<div class="bg-beige min-h-screen px-4 py-8 flex items-center justify-center">
+  <div class="container mx-auto">
+    <h1 class="text-3xl font-bold mb-8 text-center">Data Extensions</h1>
+
+    <div class="flex justify-center gap-4 mb-4">
+      <input
+        type="text"
+        placeholder="Data Extension Key"
+        [(ngModel)]="selectedDataExtensionKey"
+        class="border border-gray-300 p-2 rounded-md bg-white shadow-sm focus:outline-none focus:border-brown focus:ring-2 focus:ring-brown focus:ring-opacity-50 transition"
+      />
+      <button (click)="fetchDataExtensionDetails()" class="px-4 py-2 bg-brown text-white rounded-md hover:bg-darkbrown transition">Fetch Data</button>
+    </div>
+
+    <div class="overflow-x-auto">
+      <table class="min-w-full bg-white border border-gray-300">
+        <thead class="bg-brown text-white">
+        <tr>
+          <th *ngFor="let field of dataExtensionFields" class="px-4 py-2 border">{{ field }}</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let item of dataExtensionItems" class="hover:bg-lightbrown transition">
+          <td *ngFor="let field of dataExtensionFields" class="px-4 py-2 border">{{ item.values[field] }}</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

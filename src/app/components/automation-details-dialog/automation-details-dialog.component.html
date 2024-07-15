@@ -1,0 +1,14 @@
+<div class="bg-beige min-h-screen px-4 py-8">
+  <div class="container mx-auto">
+    <div class="bg-white rounded-lg shadow-md p-6 border border-gray-300">
+      <h2 class="text-2xl font-semibold mb-4">{{ data.name }}</h2>
+      <p class="text-gray-700 mb-2"><strong>Status:</strong> {{ data.status }}</p>
+      <p class="text-gray-700 mb-2"><strong>Description:</strong> {{ data.description }}</p>
+      <p class="text-gray-700 mb-2"><strong>Last Run Time:</strong> {{ data.lastRunTime | date: 'short' }}</p>
+      <p class="text-gray-700 mb-2"><strong>Schedule:</strong> {{ data.schedule.id }}</p>
+      <div class="flex justify-end mt-4">
+        <button  mat-dialog-close class="px-3 py-1 bg-brown text-black font-semibold rounded-md hover:bg-brown ">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
